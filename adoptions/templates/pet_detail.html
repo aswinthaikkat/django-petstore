@@ -1,0 +1,20 @@
+{%extends "base.html"%}
+{% block content %}
+<div>
+    <h1>{{pet.name|capfirst}}</h1>
+    {% if pet.breed %}
+    <p>Breed is {{pet.breed}}</p>
+    {% endif %}
+    {% if pet.breed %}
+    <p> {{pet.description}}</p>
+    {% endif %}
+
+
+    <ul>
+        {% for vaccine in pet.vaccinations.all %}
+        <div>{{vaccine.name}}</div>
+        {% endfor %}
+    </ul>
+
+</div>
+{% endblock %}
